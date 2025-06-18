@@ -154,5 +154,34 @@ cualquier cosa que no sea un numero y por ultimo hacer la operacion normalmente 
 console.log 
 */
 
+/*
+6. Convertir la primera letra de cada palabra en mayúscula
+*/
+
+function capitalizarPalabras(cadena) {
+    const palabras = cadena.split(' ');
+    const palabrasCapitalizadas = palabras.map(palabra => {
+        if (palabra.length === 0) {
+            return '';
+        }
+        return palabra.charAt(0).toUpperCase() + palabra.slice(1).toLowerCase();
+    });
+
+    return palabrasCapitalizadas.join(' ');
+}
+
+console.log("Solucion 6: Convertir la primera letra de cada palabra en mayúscula");
+console.log("Ejemplo 1: hola mundo desde javascript");
+console.log("Resultado:", capitalizarPalabras("hola mundo desde javascript"));
+console.log("Ejemplo 2: lorem ipsum");
+console.log("Resultado:", capitalizarPalabras("lorem ipsum")); 
+console.log("Ejemplo 3: No Se mE ocUrre nADA mas");
+console.log("Resultado:", capitalizarPalabras("No Se mE ocUrre nADA mas"));
+console.log("\n----------------------------------------------------\n");
+
+/*
+Primero separar las palabras y despues mapearlas para devolver un array donde se transforma la primera letra en mayuscula y las siguientes en minuscula.
+Finalmente unir el array para que se vuelva nuevamente una cadena de strings
+*/
 
 
