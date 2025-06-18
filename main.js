@@ -184,4 +184,36 @@ Primero separar las palabras y despues mapearlas para devolver un array donde se
 Finalmente unir el array para que se vuelva nuevamente una cadena de strings
 */
 
+/*
+7. Generar los primeros N números de la sucesión de Fibonacci
+*/
 
+
+function fibonacci(n) {
+    if (n <= 0) {
+        return [];
+    } else if (n === 1) {
+        return [0];
+    } else {
+        const secuencia = [0, 1]; 
+        for (let i = 2; i < n; i++) {
+            const siguienteNumero = secuencia[i - 1] + secuencia[i - 2];
+            secuencia.push(siguienteNumero);
+        }
+        return secuencia;
+    }
+}
+
+console.log("Solucion 7: Generar los primeros N números de la sucesión de Fibonacci");
+console.log("Ejemplo 1: 5");
+console.log("Resultado:", fibonacci(5));
+console.log("Ejemplo 2: 0");
+console.log("Resultado:", fibonacci(0)); 
+console.log("Ejemplo 1: 10");
+console.log("Resultado:", fibonacci(10)); 
+console.log("\n----------------------------------------------------\n");
+
+/*
+Lo importante esta en la parte del ELSE, donde arrancamos por default con un array con 2 int (0 y 1) y va agregando el siguiente numero y 
+pusheandolo a la secuencia hasta completar el bucle for let con la cantidad de numeros elegidos.
+*/
