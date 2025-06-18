@@ -119,6 +119,40 @@ Despues invertimos la cadena y la comparamos con la original para que devuelva u
 
 */
 
+/*
+5. Crear un programa para convertir la edad de un perro a años humanos
+
+*/
+
+
+function edadCanina() {
+    const edadHumanaStr = prompt("Ingresar edad del perro");
+    const edadHumana = parseInt(edadHumanaStr);
+    if (isNaN(edadHumana) || edadHumana < 0) {
+        console.log("La edad en números... crei que era obvio...");
+        return;
+    }
+
+    const edadCan = edadHumana * 7;
+        console.log(`Ingresaste el numero ${edadHumana} `);
+
+    console.log(`Tu perro tiene ${edadCan} años humanos.`);
+}
+
+console.log("Solucion 5: Convertir la edad de un perro a años humanos");
+console.log("Ejemplo 1:");
+edadCanina(); 
+console.log("Ejemplo 2:");
+edadCanina(); 
+console.log("Ejemplo 3:");
+edadCanina();
+console.log("\n----------------------------------------------------\n");
+
+/*
+Lo principal es parsear lo ingresado a un int para poder usar operaciones aricmeticas. Despues agregar un condicional para evitar que ingresen
+cualquier cosa que no sea un numero y por ultimo hacer la operacion normalmente y poner un... placeholder? ${} para que aparezca la resolucion en el
+console.log 
+*/
 
 
 
