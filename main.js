@@ -119,6 +119,101 @@ Despues invertimos la cadena y la comparamos con la original para que devuelva u
 
 */
 
+/*
+5. Crear un programa para convertir la edad de un perro a años humanos
+
+*/
 
 
+function edadCanina() {
+    const edadHumanaStr = prompt("Ingresar edad del perro");
+    const edadHumana = parseInt(edadHumanaStr);
+    if (isNaN(edadHumana) || edadHumana < 0) {
+        console.log("La edad en números... crei que era obvio...");
+        return;
+    }
 
+    const edadCan = edadHumana * 7;
+        console.log(`Ingresaste el numero ${edadHumana} `);
+
+    console.log(`Tu perro tiene ${edadCan} años humanos.`);
+}
+
+console.log("Solucion 5: Convertir la edad de un perro a años humanos");
+console.log("Ejemplo 1:");
+edadCanina(); 
+console.log("Ejemplo 2:");
+edadCanina(); 
+console.log("Ejemplo 3:");
+edadCanina();
+console.log("\n----------------------------------------------------\n");
+
+/*
+Lo principal es parsear lo ingresado a un int para poder usar operaciones aricmeticas. Despues agregar un condicional para evitar que ingresen
+cualquier cosa que no sea un numero y por ultimo hacer la operacion normalmente y poner un... placeholder? ${} para que aparezca la resolucion en el
+console.log 
+*/
+
+/*
+6. Convertir la primera letra de cada palabra en mayúscula
+*/
+
+function capitalizarPalabras(cadena) {
+    const palabras = cadena.split(' ');
+    const palabrasCapitalizadas = palabras.map(palabra => {
+        if (palabra.length === 0) {
+            return '';
+        }
+        return palabra.charAt(0).toUpperCase() + palabra.slice(1).toLowerCase();
+    });
+
+    return palabrasCapitalizadas.join(' ');
+}
+
+console.log("Solucion 6: Convertir la primera letra de cada palabra en mayúscula");
+console.log("Ejemplo 1: hola mundo desde javascript");
+console.log("Resultado:", capitalizarPalabras("hola mundo desde javascript"));
+console.log("Ejemplo 2: lorem ipsum");
+console.log("Resultado:", capitalizarPalabras("lorem ipsum")); 
+console.log("Ejemplo 3: No Se mE ocUrre nADA mas");
+console.log("Resultado:", capitalizarPalabras("No Se mE ocUrre nADA mas"));
+console.log("\n----------------------------------------------------\n");
+
+/*
+Primero separar las palabras y despues mapearlas para devolver un array donde se transforma la primera letra en mayuscula y las siguientes en minuscula.
+Finalmente unir el array para que se vuelva nuevamente una cadena de strings
+*/
+
+/*
+7. Generar los primeros N números de la sucesión de Fibonacci
+*/
+
+
+function fibonacci(n) {
+    if (n <= 0) {
+        return [];
+    } else if (n === 1) {
+        return [0];
+    } else {
+        const secuencia = [0, 1]; 
+        for (let i = 2; i < n; i++) {
+            const siguienteNumero = secuencia[i - 1] + secuencia[i - 2];
+            secuencia.push(siguienteNumero);
+        }
+        return secuencia;
+    }
+}
+
+console.log("Solucion 7: Generar los primeros N números de la sucesión de Fibonacci");
+console.log("Ejemplo 1: 5");
+console.log("Resultado:", fibonacci(5));
+console.log("Ejemplo 2: 0");
+console.log("Resultado:", fibonacci(0)); 
+console.log("Ejemplo 1: 10");
+console.log("Resultado:", fibonacci(10)); 
+console.log("\n----------------------------------------------------\n");
+
+/*
+Lo importante esta en la parte del ELSE, donde arrancamos por default con un array con 2 int (0 y 1) y va agregando el siguiente numero y 
+pusheandolo a la secuencia hasta completar el bucle for let con la cantidad de numeros elegidos.
+*/
